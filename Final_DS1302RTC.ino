@@ -36,7 +36,7 @@ void setup() {
   Serial.begin(9600);
   lcd.begin();
   lcd.backlight();
-  lcd.setCursor(2, 0);
+  lcd.setCursor(0, 0); //first column, first row
   lcd.print("Hello World!");
   delay(2000);
   lcd.clear();
@@ -54,10 +54,10 @@ void loop() {
   char buf[50];
   snprintf(buf, sizeof(buf), "%s %04d-%02d-%02d %02d:%02d:%02d", day.c_str(), t.yr, t.mon, t.date, t.hr, t.min, t.sec);
   Serial.println(buf);
-  lcd.setCursor(0, 0);
+  lcd.setCursor(0, 0); //first column, first row
   lcd.print(t.hr); lcd.print(":"); lcd.print(t.min / 10);
   lcd.print(t.min % 10); lcd.print(":"); lcd.print(t.sec / 10); lcd.print(t.sec % 10);
-  lcd.setCursor(0, 1);
+  lcd.setCursor(0, 1); //first column, second row
   lcd.print(t.mon / 10); lcd.print(t.mon % 10); lcd.print("/"); lcd.print(t.date / 10); lcd.print(t.date % 10);
   lcd.print("/"); lcd.print(t.yr / 10); lcd.print(t.yr % 10);
   delay(1000);
