@@ -1,4 +1,4 @@
-//Final Project: RTC DS1302 module
+//Project: RTC DS1302 module
 //Sketched by JIN-WOO KIM
 
 #include <stdio.h>
@@ -37,9 +37,7 @@ void setup() {
   lcd.begin();
   lcd.backlight();
   lcd.setCursor(2, 0);
-  lcd.print("JIN-WOO KIM");
-  lcd.setCursor(2, 1);
-  lcd.print("Question #5");
+  lcd.print("Hello World!");
   delay(2000);
   lcd.clear();
   rtc.writeProtect(false);
